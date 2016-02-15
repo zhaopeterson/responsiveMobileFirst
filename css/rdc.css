@@ -1,0 +1,148 @@
+/* css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+body {font-family:'Open Sans', sans-serif; font-size: 16px; font-weight: 300;color:#555;margin:0;padding:0}
+* {box-sizing: border-box}
+:focus {outline: 0};
+#page { max-width: 1600px; min-height: 200px; margin: 0 auto}
+
+/* ********* Mobile First *********** */
+/* target width below 425px */
+/* Text */
+h1 { margin: 0 0 1em; font-size: 14px; font-weight: bold;}
+h2 { margin: 0 0 0.5em 0; font-size: 14px; font-weight: bold; line-height: 1.1em;}
+h3 { margin: 0 0 0.5em 0; font-size: 24px; font-weight: bold;}
+
+p { margin: 0 0 1em 0; font-size: 14px; line-height: 1.4;}
+sup.super {position: relative; top: -3px; font-size: 12px;}
+/* Header Area */
+header {background: #49591d url("../images/banner-rdc-600.jpg") no-repeat center bottom; padding: 0;}
+nav {width: 100%; background: #fff; margin: 0 auto;}
+nav .topnav {max-width: 1200px; height: 55px; margin: 0 auto; padding: 0 10px; text-align: center; border: solid 1px transparent;}
+nav .topnav img {padding-top: 7px;}
+
+/* There are some strange bugs in iOS 9 -- iPhone 6 6s 6splus with box-sizing, so use 
+	border: solid 1px transparent; box-sizing: border-box to fix that*/
+
+.form-wrapper {width: 100%; max-width: 1200px; min-height: 300px; position: relative; margin: 0 auto; padding: 25px 15px 25px 15px; border: solid 1px transparent;}
+form.lead-contact {background: rgba(255,255,255,0.85); min-height: 325px; padding: 30px; text-align: center; margin: 0 auto; max-width: 480px;}
+form.lead-contact h2 {font-weight: normal;}
+
+form.lead-contact input {width: 100%; padding: 0 10px; height: 35px; line-height: 35px; border: solid 1px #ccc; border-radius: 5px; margin: 0 0 7px 0; font-size: 14px;}
+form.lead-contact p {text-align: left;}
+form.lead-contact input[type="checkbox"] {width: 20px; height: 25px; float: left; margin-right: 5px; }
+label {font-size: 14px; height: 25px; margin-top: 5px; line-height: 1.4; position: relative; top: 4px;}
+button[type="submit"] {width: 100%; background: #ee0d0d; border: solid 1px #c90d0d; color: #fff; height: 34px; line-height: 34px; border-radius: 5px; padding: 0 25px; display: block; font-size: 14px; margin-top: 13px;}
+	
+form.lead-contact input.name {width: 100%;}
+form.lead-contact input#last-name {float:none;}
+form.lead-contact span {position: relative; /*border: solid 1px blue;*/ min-width: 100px;}
+div.inline-error {position: absolute; font-size: 12px; left: 10px; color: yellow; padding: 5px 20px; border-radius: 3px; background: rgba(0,0,0, 0.6); z-index: 50;}
+
+div.inline-error::before {content: ''; display: block; width:0; height:0; position: absolute; top: -4px; border-bottom: solid 4px rgba(0,0,0, 0.6); border-right: solid 5px transparent; border-left: solid 5px transparent;}
+
+/* Section All */
+section::after { content: ''; display: block; clear: both;} /* just in case there is floating items, make sure do clear */
+
+/* Section Main */
+section.main { max-width: 1200px; margin: 40px auto 20px; padding: 0;}
+section.main aside {width: 100%; text-align: center; padding: 0 10px 10px 10px; border-left: solid 1px transparent;}
+
+section.main .content {margin: 15px; background: no-repeat center top; background-size: 125px 125px; padding-top: 155px;}
+section.main aside h2 a { display: inline-block; font-size: 24px; color: #000; text-decoration: none; margin-bottom: 10px;}
+section.main aside h2 a:hover { text-decoration: underline;}
+section.main aside p {font-size: 14px; }
+
+section.main aside .content.heading1,
+section.main aside .content.heading2,
+section.main aside .content.heading3 { background-image : url(../images/icon-mail.png);}
+
+section.main aside a.learn-more {font-weight: bold; display: inline-block; width: 120px; height: 34px; border: solid 1px #ccc; line-height: 34px; border-radius: 5px; text-decoration: none; font-size: 14px; color: #000;}
+section.main aside a.learn-more:hover {text-decoration: underline;}
+
+/* Section Carousel */
+section.carousel-container { max-width: 1600px; text-align: center; background: #eee; margin: 0 auto; padding: 50px 0 50px 0;}
+
+.carousel-inner { width: 100%; height: 290px; overflow: hidden; position: relative; max-width: 1200px; margin: 0 auto;}
+.carousel-inner > .item { position: absolute; top: 0; left: 0; width: 100%; max-width: 1200px; height: 290px; opacity: 0; border-right: solid 15px #eee; border-left: solid 15px #eee;
+  -webkit-transition: all .6s ease-in-out;
+       -o-transition: all .6s ease-in-out;
+          transition: all .6s ease-in-out;
+}
+
+.carousel-inner > .item:nth-child(1) {
+	background: #eee url("../images/carousel-house1.jpg") no-repeat center top;
+}
+.carousel-inner > .item:nth-child(2) {
+	background: #eee url("../images/carousel-house2.jpg") no-repeat center top;
+}
+.carousel-inner > .item:nth-child(3) {
+	background: #eee url("../images/carousel-house3.jpg") no-repeat center top;
+}
+
+.carousel-inner > .item.active { opacity: 1; z-index: 5;}
+
+.carousel-indicators { max-width: 1200px; margin: 0 auto; text-align: center;}
+.carousel-indicators li {width: 15px; height: 15px; border-radius: 50%; border: solid 1px #ccc; z-index: 50; margin: 25px 5px 0; display: inline-block; cursor: pointer;
+    background: rgba(255, 255, 255, 0.5);}
+.carousel-indicators li.active {
+  background: #a6a6a6;
+}
+
+/* Featured Containers */
+section.featured-container { width: 100%; max-width: 1200px; min-height: 365px; background: #fff; margin: 0 auto; padding: 35px 15px 15px;}
+.featured-container {text-align: left;}
+section.featured-container img {width: 100%; max-width: 485px; margin-bottom: 30px;}
+section.container2 {background: #eee; padding-bottom: 30px;}
+
+
+@media screen and (min-width: 625px) {
+	/* make sure the text does not exceed 700px (roughly) for optimal reading length */
+
+	header {background: #49591d url("../images/banner-rdc-800.jpg") no-repeat center bottom; }
+	section.main aside {padding: 0 12% 10px 12%;}
+	.featured-container {text-align: center; padding: 40px 12% 10px 12%;}
+
+}
+
+@media screen and (min-width: 825px) {
+
+	header {background: #fff url("../images/banner-rdc-1200.jpg") no-repeat center bottom; height: 690px; position: relative; text-align: left;}
+	nav {width: 100%; margin: 0 auto;}
+	nav .topnav {text-align: left;}
+	form.lead-contact { max-width: 600px; position: absolute; top: 135px; left: 50%; margin-left: -300px; text-align: left;}
+	form.lead-contact h1 {font-size: 26px;}
+	form.lead-contact h2 {font-weight: normal; font-size: 18px;}
+
+	form.lead-contact input.name { width: 48.5%;}
+	form.lead-contact span.lastname-wrapper {float: right; width: 48.5%;}
+
+	form.lead-contact input#last-name { width: 100%;}
+	button[type="submit"] {width: auto;}
+
+	section.main aside {width: 33.3%; float: left; text-align: center; padding: 0 10px;}
+	.featured-container {padding: 0 15px;}
+	.featured-container {text-align: left;}
+	section.container1 img {width: 50%; max-width: 485px; float: left; margin-right: 30px;}
+	section.container1 h3, section.container2 h3 { padding-top: 40px;}
+	section.container2 img {width: 50%; max-width: 485px; float: right; margin-left: 30px;}
+}
+
+@media screen and (min-width: 1230px) {
+	header {background: #fff url("../images/banner-rdc-1600.jpg") no-repeat center bottom; }
+	section.main aside {padding: 0 10px 10px 10px;}
+	section.main .content {margin: 15px 0;}
+	.carousel-inner > .item {border: 0;}
+	section.featured-container {padding-right: 0; padding-left: 0;}
+	.form-wrapper {max-width: 1200px; min-height: 300px; position: relative; margin: 0 auto;}
+	form.lead-contact {width: 600px; left: auto; top: 135px; margin-left: 0; right: 0;}
+	.featured-container.container2 {max-width: 1600px;}
+	.featured-container.container2 article {max-width: 1200px; margin: 0 auto; /*padding: 0 15px;*/}
+	.featured-container p {font-size: 22px;}
+}

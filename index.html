@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Exercise - Realtor.com Beta Test</title>
+		<link rel="stylesheet" type="text/css" href="css/rdc.css" media = "screen">
+	</head>
+	<body>
+
+
+		<div id="page">
+			<header>
+				<nav>	
+					<div class="topnav">
+					<a class="logo" title="Realtor.com Beta Test" href="#">
+						<img class="logo" src="images/logo-rdc.jpg"/>
+					</a>
+					</div><!--  end of topnav div  -->
+				</nav>
+
+				<div class="form-wrapper">
+					<form id="lead-contact" class="lead-contact" action ="" method="POST" novalidate>
+						<h2 class="subtiltle">Be the first to try the new realtor.com<sup class="super">®</sup></h2>
+						<h1 class="title">Sign Up to Opt-in the Beta Test</h1>
+						<span><input type="text" id="first-name" pattern= "^[A-Za-z ,.'-]+$" class="name" name="first-name" placeholder="First Name" required novalidate /></span>
+						<span class="lastname-wrapper"><input type="text" id="last-name" pattern= "^[A-Za-z ,.'-]+$" class="name" name="last-name" placeholder="Last Name" required novalidate /></span>
+						<span><input type="email" id="email" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" class="email" name="email" placeholder="Email" required novalidate /></span>
+						<span><input type="tel" id="tel" class="tel" name="tel" placeholder="Telephone (optional)" novalidate /></span>
+						<p><input type = "checkbox" id="newsletter" class="newsletter" /><label for="newsletter">Sign me up for monthly real estate updates</label></p>
+						<button type="submit" id="submit" class="submit" value="submit">Sign Up Now</button>
+					</form>
+				</div>
+			</header>
+
+			<section class="main">
+				<aside>
+					<div class="content heading1">
+						<h2><a href="#">Heading 1</a></h2>
+						<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+						<a class="learn-more" href="#">Learn More</a>
+					</div>	
+				</aside>
+
+				<aside>
+					<div class="content heading2">
+						<h2><a href="#">Heading 2</a></h2>
+						<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+						<a class="learn-more" href="#">Learn More</a>
+					</div>						
+				</aside>
+
+				<aside>
+					<div class="content heading3">
+						<h2><a href="#">Heading 3</a></h2>
+						<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+						<a class="learn-more" href="#">Learn More</a>
+					</div>	
+				</aside>
+			</section>         <!--  end of section main  -->
+
+			<section class="carousel-container">
+			  <div class="carousel slide" data-ride="carousel" id="featured">
+			    <div class="carousel-inner">
+			      <div class="item">
+			      </div>
+			      <div class="item">
+			      </div>
+			      <div class="item">
+			      </div>
+			    </div><!--  end of carousel inner  -->
+			    <ol class="carousel-indicators">
+			    </ol>
+			  </div>
+			</section> <!--  end of section carousel container  -->
+
+			<section class="featured-container container1">
+				<article>
+					<div class="content">
+						<img src="images/featured-house1.jpg" alt="featured image1">
+						<h3>Featured Heading 1</h3>
+						<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.Donec sed odio dui.</p>
+					</div>
+				</article>
+			</section> <!--  end of featured container 1  -->
+
+			<section class="featured-container container2">
+				<article>
+					<div class="content">
+						<img src="images/featured-house2.jpg" alt="featured image2">
+						<h3>Featured Heading 2</h3>
+						<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.Donec sed odio dui.</p>					
+					</div>
+				</article>
+			</section> <!--  end of featured container 2  -->
+
+
+
+
+		</div><!--  end of div page  -->
+		<div class="developer-info" style="position: fixed; bottom: 0; height: 20px; line-height: 20px; min-width: 200px; background: rgba(0,0,0,0.35); font-size: 10px; color: #fff; z-index: 100";></div>
+
+	<script src="js/jquery-1.11.1.js"></script>
+	<script src="js/carousel.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		// helper functions to determin window size and bg loaded
+		function getWS() {
+			ws = $(window).width();
+			return ws;
+		}
+		function getBg() {
+			var bg = $("header").css('background-image');
+			bg = bg.slice(-28);
+			return bg;
+		}
+
+		$(".developer-info").html( "Window width is: " + getWS() + " and bg is: " + getBg()+ " header width is: "+ $("header").width())
+		$(window).on("resize", function(){
+			$(".developer-info").html( "Window width is: " + getWS() + " and bg is: " + getBg())
+		})
+
+
+		// Start Carousel 
+		var slideqty = $("#featured .item").length;
+
+		for (var i=0; i<slideqty; i++) {
+			var indicatorHtml = "<li data-target = '#featured' data-slide-to = '" + i + "'></li>";
+			$("#featured .carousel-indicators").append(indicatorHtml);
+		}
+		$("#featured .carousel-indicators li").eq(0).addClass("active")
+		$("#featured .item").eq(0).addClass("active");
+		$(".carousel").carousel({
+			interval: 5000
+		});
+
+		// Form Validation
+
+
+	});
+
+	// just added on some validation to see how to style error messages
+	$("input[required]").on("blur", function(){
+		$("div.inline-error").remove();
+		$(this).css("border", "0")
+		var regex = $(this).attr("pattern"),
+			placeholder = $(this).attr("placeholder"),
+			isValid = $(this).val().search(regex) >=0;
+			if(!isValid) {
+				$(this).focus();
+				$(this).css("border", "solid 2px #f10200")
+				$(this).after("<div class='inline-error'>Entry not Valid</div>")
+			}
+
+	})
+	</script>
+	</body>
+</html>
